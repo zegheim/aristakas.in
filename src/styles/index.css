@@ -1,18 +1,42 @@
+/* Preflight will be injected here */
 @tailwind base;
 
 /* Write your own custom base styles here */
+@layer base {
+  p {
+    @apply mb-2;
+  }
+
+  a {
+    @apply text-blue-600;
+  }
+
+  ul {
+    @apply list-disc mb-2 ml-8;
+  }
+
+  li {
+    @apply mb-1;
+  }
+}
 
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
 
-/* Write you own custom component styles here */
-.btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+/* Write your own custom component styles here */
+@layer components {
+  .container {
+    @apply max-w-xl px-4 mx-auto mt-12 mb-24;
+  }
+
+  .btn-blue {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  }
 }
 
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
 
-/* Your own custom utilities */
+/* Write your own custom utilities here */
