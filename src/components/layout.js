@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "./header.js";
 
 const name = "Justin Arista Kasin";
-const siteTitle = "Next.js sample website";
+const siteTitle = "Justin Arista Kasin";
 
 const Layout = ({ children, home }) => (
   <div
