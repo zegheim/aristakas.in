@@ -17,6 +17,20 @@ module.exports = {
         secondary: "#fbe7d1",
         tertiary: "#c5c7be",
       },
+      keyframes: {
+        typing: {
+          from: { width: "0" },
+          to: { width: "100%" },
+        },
+        "blink-caret": {
+          "from, to": { "border-color": "transparent" },
+          "50%": { "border-color": "#f67c99" },
+        },
+      },
+      animation: {
+        typing:
+          "typing 3.6s steps(18, start), blink-caret 1s step-end infinite",
+      },
     },
   },
   variants: {},

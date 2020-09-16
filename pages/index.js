@@ -13,9 +13,11 @@ const IndexPage = ({ allPostsData }) => (
       <title>{siteTitle}</title>
     </Head>
     <section className="text-primary text-center px-4">
-      <h1 className="text-2xl font-mono tracking-tighter mb-4">
-        Hello, I'm <strong>Justin</strong>.
-      </h1>
+      <div className="inline-block">
+        <h1 className="text-2xl font-mono leading-none mb-4 overflow-hidden border-r-2 border-primary whitespace-no-wrap mx-auto animate-typing">
+          Hello, I'm <strong>Justin</strong>.
+        </h1>
+      </div>
       <p>I am currently a Software Engineer at J.P. Morgan, based in London.</p>
       <p>Views expressed are my own.</p>
     </section>
@@ -23,22 +25,6 @@ const IndexPage = ({ allPostsData }) => (
       <Navbar home />
       <SocialIcons />
     </section>
-    {/* <section className="text-base leading-normal pt-px">
-      <h2 className="text-lg font-bold leading-snug my-4 mx-0">Blog</h2>
-      <ul className="list-none p-0 m-0">
-        {allPostsData.map(({ id, date, title }) => (
-          <li className="mt-0 mx-0 mb-5" key={id}>
-            <Link href="/posts/[id]" as={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small className="text-gray-500">
-              <Date dateString={date} />
-            </small>
-          </li>
-        ))}
-      </ul>
-    </section> */}
   </Layout>
 );
 
