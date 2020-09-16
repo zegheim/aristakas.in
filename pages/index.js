@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import Date from "../src/components/date";
 import Layout, { siteTitle } from "../src/components/layout";
+import Navbar from "../src/components/navbar";
+import SocialIcons from "../src/components/social-icons";
 import { getSortedPostsData } from "../src/lib/posts";
 
 const IndexPage = ({ allPostsData }) => (
@@ -10,14 +12,18 @@ const IndexPage = ({ allPostsData }) => (
     <Head>
       <title>{siteTitle}</title>
     </Head>
-    <section className="text-base leading-normal">
-      <p>Hello, I'm Justin.</p>
-      <p>
-        (This is a sample website - you’ll be building a site like this on{" "}
-        <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-      </p>
+    <section className="text-primary text-center px-4">
+      <h1 className="text-2xl font-mono tracking-tighter mb-4">
+        Hello, I'm <strong>Justin</strong>.
+      </h1>
+      <p>I am currently a Software Engineer at J.P. Morgan, based in London.</p>
+      <p>Views expressed are my own.</p>
     </section>
-    <section className="text-base leading-normal pt-px">
+    <section className="text-primary mt-16 flex flex-col items-center">
+      <Navbar home />
+      <SocialIcons />
+    </section>
+    {/* <section className="text-base leading-normal pt-px">
       <h2 className="text-lg font-bold leading-snug my-4 mx-0">Blog</h2>
       <ul className="list-none p-0 m-0">
         {allPostsData.map(({ id, date, title }) => (
@@ -32,7 +38,7 @@ const IndexPage = ({ allPostsData }) => (
           </li>
         ))}
       </ul>
-    </section>
+    </section> */}
   </Layout>
 );
 

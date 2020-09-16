@@ -3,12 +3,12 @@
 
 /* Write your own custom base styles here */
 @layer base {
-  p {
-    @apply mb-2;
+  html {
+    @apply bg-background;
   }
 
-  a {
-    @apply text-blue-600;
+  p {
+    @apply mb-2;
   }
 
   ul {

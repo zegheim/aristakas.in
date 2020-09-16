@@ -7,7 +7,11 @@ const name = "Justin Arista Kasin";
 const siteTitle = "Next.js sample website";
 
 const Layout = ({ children, home }) => (
-  <div className="container">
+  <div
+    className={`min-h-screen min-w-screen flex flex-col ${
+      home ? "justify-center" : "justify-start"
+    }`}
+  >
     <Head>
       <meta
         name="description"
@@ -22,15 +26,17 @@ const Layout = ({ children, home }) => (
       <meta name="og:title" content={siteTitle} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
-    <Header name={name} home={home} />
-    <main>{children}</main>
-    {!home && (
-      <div className="mt-12 mx-0 mb-0">
-        <Link href="/">
-          <a>← Back to home</a>
-        </Link>
-      </div>
-    )}
+    <div className="container">
+      <Header name={name} home={home} />
+      <main>{children}</main>
+      {!home && (
+        <div className="mt-12 mx-0 mb-0">
+          <Link href="/">
+            <a>← Back to home</a>
+          </Link>
+        </div>
+      )}
+    </div>
   </div>
 );
 
