@@ -3,10 +3,10 @@ import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const SocialIcons = () => (
   <div className="md:text-lg lg:text-xl">
-    <a href="https://linkedin.com/in/justinarista">
+    <a href="https://github.com/zegheim">
       <FontAwesomeIcon icon={faGithubSquare} className="mr-3" />
     </a>
-    <a href="https://github.com/zegheim">
+    <a href="https://linkedin.com/in/justinarista">
       <FontAwesomeIcon icon={faLinkedin} />
     </a>
   </div>
