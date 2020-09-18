@@ -16,7 +16,11 @@ const Navbar = ({ home, currRoute }) => {
       <navbar className="text-primary">
         {routeNames
           .map((routeName) => (
-            <RouteLink routeName={routeName} currRoute={currRoute} />
+            <RouteLink
+              key={routeName}
+              routeName={routeName}
+              currRoute={currRoute}
+            />
           ))
           .reduce((prev, curr) => [prev, " / ", curr])}
       </navbar>
