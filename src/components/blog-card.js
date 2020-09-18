@@ -25,7 +25,7 @@ const BlogMetadata = ({ title, date, slug, tags }) => (
           {title}
         </a>
       </Link>
-      <span className="text-sm font-thin">
+      <span className="text-sm font-light">
         <Date dateString={date} />
       </span>
       <div className="flex w-full justify-end space-x-1">

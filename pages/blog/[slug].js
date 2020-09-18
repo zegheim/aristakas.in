@@ -11,7 +11,7 @@ const PostHeader = ({ title, coverImage, date, author, tags }) => (
     <h1 className="font-black tracking-tighter text-xl leading-tight">
       {title}
     </h1>
-    <div className="font-thin">
+    <div className="font-light">
       <Date dateString={date} />
     </div>
     <div className="flex space-x-1 font-sans">
