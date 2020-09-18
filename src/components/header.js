@@ -11,7 +11,7 @@ const ProfilePicture = ({ name, className }) => (
   <img src="/images/profile.jpg" className={className} alt={name} />
 );
 
-const Header = ({ home, name }) => (
+const Header = ({ home, name, currRoute }) => (
   <header className="flex flex-col items-center">
     {home ? (
       <ProfilePicture
@@ -28,7 +28,7 @@ const Header = ({ home, name }) => (
             />
           </a>
         </Link>
-        <Navbar />
+        <Navbar currRoute={currRoute} />
       </>
     )}
   </header>
