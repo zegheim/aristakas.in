@@ -5,14 +5,6 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-const previewClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
-  host: "preview.contentful.com",
-});
-
-const getClient = (preview) => (preview ? previewClient : client);
-
 const parseAuthor = ({ fields }) => ({
   name: fields.name,
   picture: fields.picture.fields.file,
@@ -49,25 +41,25 @@ const getAllPostsWithSlug = async () => {
   return parsePostEntries(entries, (post) => post.fields);
 };
 
-const getAllPostsForHome = async (preview) => {
-  const entries = await getClient(preview).getEntries({
+const getAllPostsForHome = async () => {
+  const entries = await client.getEntries({
     content_type: "post",
     order: "-sys.createdAt",
   });
   return parsePostEntries(entries);
 };
 
-const getPostAndMorePosts = async (slug, preview) => {
-  const entry = await getClient(preview).getEntries({
+const getPostAndMorePosts = async (slug) => {
+  const entry = await client.getEntries({
     content_type: "post",
     limit: 1,
     "fields.slug[in]": slug,
   });
 
-  const entries = await getClient(preview).getEntries({
+  const entries = await client.getEntries({
     content_type: "post",
     limit: 2,
-    order: "-fields.date",
+    order: "-sys.createdAt",
     "fields.slug[nin]": slug,
   });
 

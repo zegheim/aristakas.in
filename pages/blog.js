@@ -4,7 +4,7 @@ import { getAllPostsForHome } from "../src/lib/api";
 import Layout from "../src/components/layout";
 import BlogCard from "../src/components/blog-card";
 
-const BlogPage = ({ preview, allPosts }) => {
+const BlogPage = ({ allPosts }) => {
   return (
     <Layout pageName="Blog">
       <div className="flex flex-col items-center space-y-4">
@@ -23,9 +23,9 @@ const BlogPage = ({ preview, allPosts }) => {
   );
 };
 
-const getStaticProps = async ({ preview = false }) => {
-  const allPosts = await getAllPostsForHome(preview);
-  return { props: { preview, allPosts } };
+const getStaticProps = async () => {
+  const allPosts = await getAllPostsForHome();
+  return { props: { allPosts } };
 };
 
 export { getStaticProps };

@@ -28,7 +28,7 @@ const PostBody = ({ content }) => (
   </div>
 );
 
-const Post = ({ post, morePosts, preview }) => (
+const Post = ({ post, morePosts }) => (
   <Layout pageName={post.title} blogPost>
     <article className="px-4">
       <Head>
@@ -54,11 +54,10 @@ const getStaticPaths = async () => {
   };
 };
 
-const getStaticProps = async ({ params, preview = false }) => {
-  const data = await getPostAndMorePosts(params.slug, preview);
+const getStaticProps = async ({ params }) => {
+  const data = await getPostAndMorePosts(params.slug);
   return {
     props: {
-      preview,
       post: data?.post ?? null,
       morePosts: data?.morePosts ?? null,
     },
