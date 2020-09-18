@@ -36,7 +36,7 @@ const Post = ({ post, morePosts, preview }) => (
       </Head>
       <PostHeader
         title={post.title}
-        date={post.date}
+        date={post.created_at}
         coverImage={post.coverImage}
         author={post.author}
         tags={post.tags}

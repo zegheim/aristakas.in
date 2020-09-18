@@ -8,12 +8,12 @@ const BlogPage = ({ preview, allPosts }) => {
   return (
     <Layout pageName="Blog">
       <div className="flex flex-col items-center space-y-4">
-        {allPosts.map(({ title, coverImage, date, slug, tags }) => (
+        {allPosts.map(({ title, coverImage, created_at, slug, tags }) => (
           <BlogCard
             key={slug}
             coverImage={coverImage}
             slug={slug}
-            date={date}
+            date={created_at}
             title={title}
             tags={tags}
           />

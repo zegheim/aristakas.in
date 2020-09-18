@@ -25,10 +25,12 @@ const parseTag = ({ fields }) => ({
 
 const parseTags = (tags) => tags.map(parseTag);
 
-const parsePost = ({ fields }) => ({
+const parsePost = ({ sys, fields }) => ({
   title: fields.title,
   slug: fields.slug,
   date: fields.date,
+  created_at: sys.createdAt,
+  updated_at: sys.updatedAt,
   content: fields.content,
   excerpt: fields.excerpt,
   coverImage: fields.coverImage.fields.file,
