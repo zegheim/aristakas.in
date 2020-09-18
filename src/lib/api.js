@@ -40,16 +40,6 @@ const parsePost = ({ sys, fields }) => ({
 
 const parsePostEntries = (entries, cb = parsePost) => entries?.items?.map(cb);
 
-const getPreviewPostBySlug = async (slug) => {
-  const entries = await getClient(true).getEntries({
-    content_type: "post",
-    limit: 1,
-    "fields.slug[in]": slug,
-  });
-
-  return parsePostEntries(entries)[0];
-};
-
 const getAllPostsWithSlug = async () => {
   const entries = await client.getEntries({
     content_type: "post",
@@ -62,7 +52,7 @@ const getAllPostsWithSlug = async () => {
 const getAllPostsForHome = async (preview) => {
   const entries = await getClient(preview).getEntries({
     content_type: "post",
-    order: "-fields.date",
+    order: "-sys.createdAt",
   });
   return parsePostEntries(entries);
 };
@@ -87,9 +77,4 @@ const getPostAndMorePosts = async (slug, preview) => {
   };
 };
 
-export {
-  getPreviewPostBySlug,
-  getAllPostsWithSlug,
-  getAllPostsForHome,
-  getPostAndMorePosts,
-};
+export { getAllPostsWithSlug, getAllPostsForHome, getPostAndMorePosts };
