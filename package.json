@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "setup": "node ./contentful/setup.js $CONTENTFUL_SPACE_ID $CONTENTFUL_MANAGEMENT_TOKEN"
+    "start": "next start"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
@@ -23,7 +22,6 @@
     "remark-html": "^12.0.0"
   },
   "devDependencies": {
-    "contentful-import": "^7.9.9",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
     "stylelint-config-recommended": "^3.0.0",
