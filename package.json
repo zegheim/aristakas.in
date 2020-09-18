@@ -1,16 +1,19 @@
 {
-  "name": "with-tailwindcss",
+  "name": "aristakas.in",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "setup": "node ./contentful/setup.js $CONTENTFUL_SPACE_ID $CONTENTFUL_MANAGEMENT_TOKEN"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "contentful": "^7.14.6",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "latest",
@@ -20,10 +23,11 @@
     "remark-html": "^12.0.0"
   },
   "devDependencies": {
+    "contentful-import": "^7.9.9",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
     "stylelint-config-recommended": "^3.0.0",
-    "tailwindcss": "^1.7.4"
+    "tailwindcss": "^1.8.10"
   },
   "license": "MIT"
 }
