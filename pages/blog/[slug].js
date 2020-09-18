@@ -50,7 +50,7 @@ const getStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug();
   return {
     paths: allPosts?.map(({ slug }) => `/blog/${slug}`) ?? [],
-    fallback: true,
+    fallback: false,
   };
 };
 
