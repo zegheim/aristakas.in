@@ -10,6 +10,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "2xs": ".625rem",
+      },
+      spacing: {
+        "0-5": ".125rem",
+      },
       colors: {
         inherit: "inherit",
         background: "#c2d9d5",
