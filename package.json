@@ -14,9 +14,14 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "contentful": "^7.14.6",
     "date-fns": "^2.16.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
     "next": "latest",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^3.0.0-canary.10",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "4.2.1",
