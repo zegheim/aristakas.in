@@ -1,11 +1,7 @@
-import Head from "next/head";
-import Link from "next/link";
-
 import Date from "../src/components/date";
 import Layout from "../src/components/layout";
 import Navbar from "../src/components/navbar";
 import SocialIcons from "../src/components/social-icons";
-import { getSortedPostsData } from "../src/lib/posts";
 
 const IndexPage = ({ allPostsData }) => (
   <Layout home pageName="Home">
@@ -25,10 +21,4 @@ const IndexPage = ({ allPostsData }) => (
   </Layout>
 );
 
-const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-  return { props: { allPostsData } };
-};
-
-export { getStaticProps };
 export default IndexPage;
