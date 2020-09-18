@@ -5,7 +5,6 @@ import Layout from "../src/components/layout";
 import BlogCard from "../src/components/blog-card";
 
 const BlogPage = ({ preview, allPosts }) => {
-  console.log(allPosts.map((post) => post.tags));
   return (
     <Layout pageName="Blog">
       <div className="flex flex-col items-center space-y-4">
