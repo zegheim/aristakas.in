@@ -28,7 +28,7 @@ const Navbar = ({ home, currRoute }) => {
   const externalLinks = [
     <ExternalLink
       key="contact"
-      href="mailto:form@aristakas.in"
+      href="mailto:hello@aristakas.in"
       text="contact"
     />,
     <ExternalLink key="cv" href="/CV_Latest__LinkedIn_.pdf" text="cv" />,
