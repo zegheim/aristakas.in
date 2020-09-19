@@ -4,7 +4,13 @@ import Profile from "../../public/images/profile.jpg";
 import Navbar from "../components/navbar";
 
 const ProfilePicture = ({ name, className }) => (
-  <Img webp src={Profile} className={className} alt={name} sizes={[320, 640]} />
+  <Img
+    webp
+    src={Profile}
+    className={className}
+    alt={name}
+    sizes={[480, 640, 768, 1024, 1280]}
+  />
 );
 
 const Header = ({ home, name, currRoute }) => (
