@@ -6,19 +6,26 @@ import Tag from "../../src/components/tag";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../src/lib/api";
 
 const PostHeader = ({ title, coverImage, date, tags }) => (
-  <div className="font-mono text-primary mb-4 flex flex-col space-y-1">
-    <h1 className="font-black tracking-tighter text-xl leading-tight">
-      {title}
-    </h1>
-    <div className="font-light">
-      <Date dateString={date} />
+  <>
+    <div className="font-mono text-primary mb-4 flex flex-col space-y-1">
+      <h1 className="font-black tracking-tighter text-xl leading-tight">
+        {title}
+      </h1>
+      <div className="font-light">
+        <Date dateString={date} />
+      </div>
+      <div className="flex space-x-1 font-sans">
+        {tags.map((tag) => (
+          <Tag key={tag.name} name={tag.name} />
+        ))}
+      </div>
     </div>
-    <div className="flex space-x-1 font-sans">
-      {tags.map((tag) => (
-        <Tag key={tag.name} name={tag.name} />
-      ))}
-    </div>
-  </div>
+    <img
+      src={coverImage.url}
+      alt={`Cover image for ${title}`}
+      className="min-h-full min-w-full mb-4"
+    />
+  </>
 );
 
 const PostBody = ({ content }) => (
