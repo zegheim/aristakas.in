@@ -36,7 +36,7 @@ const Navbar = ({ home, currRoute }) => {
   const allLinks = [...internalLinks, ...externalLinks];
 
   return (
-    <div className={`w-full flex justify-center ${home ? "mb-2" : "mb-6"}`}>
+    <div className={`w-full flex justify-center ${home ? "" : "mb-6"}`}>
       <navbar className="text-primary">
         {allLinks.reduce((prev, curr) => [prev, " / ", curr])}
       </navbar>

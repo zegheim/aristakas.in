@@ -1,6 +1,7 @@
 import Layout from "../src/components/layout";
 import Navbar from "../src/components/navbar";
 import SocialIcons from "../src/components/social-icons";
+import TechStack from "../src/components/tech-stack";
 
 const IndexPage = () => (
   <Layout home pageName="Home">
@@ -13,9 +14,10 @@ const IndexPage = () => (
       <p>I am currently a Software Engineer at J.P. Morgan, based in London.</p>
       <p>Views expressed are my own.</p>
     </section>
-    <section className="text-primary mt-16 flex flex-col items-center">
+    <section className="text-primary mt-16 flex flex-col items-center space-y-2">
       <Navbar home />
       <SocialIcons />
+      <TechStack />
     </section>
   </Layout>
 );

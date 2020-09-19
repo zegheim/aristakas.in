@@ -8,7 +8,7 @@ const SocialIcon = ({ label, href, icon }) => (
 );
 
 const SocialIcons = () => (
-  <div className="text-xl flex space-x-3">
+  <div className="text-xl leading-none space-x-3">
     <SocialIcon
       label="My GitHub Account"
       href="https://github.com/zegheim"
