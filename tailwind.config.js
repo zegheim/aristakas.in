@@ -14,7 +14,11 @@ module.exports = {
         "2xs": ".625rem",
       },
       spacing: {
-        "0-5": ".125rem",
+        "1/2": ".125rem",
+      },
+      inset: {
+        "1/2": "50%",
+        "-1/2": "-50%",
       },
       colors: {
         inherit: "inherit",
