@@ -20,7 +20,7 @@ const BlogMetadata = ({ title, date, slug, tags }) => (
   <div className="flex rounded-b-md bg-primary p-4 flex-1">
     <div className="text-secondary flex flex-col w-full">
       <Link as={`/blog/${slug}`} href="/blog/[slug]">
-        <a aria-label={title} className="font-semibold">
+        <a aria-label={title} className="text-secondary font-semibold">
           {title}
         </a>
       </Link>
