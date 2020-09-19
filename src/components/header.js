@@ -1,13 +1,7 @@
 import Link from "next/link";
 import Img from "react-optimized-image";
-import Navbar from "../components/navbar";
-
 import Profile from "../../public/images/profile.jpg";
-
-const links = [
-  { href: "https://github.com/vercel/next.js", label: "GitHub" },
-  { href: "https://nextjs.org/docs", label: "Docs" },
-];
+import Navbar from "../components/navbar";
 
 const ProfilePicture = ({ name, className }) => (
   <Img webp src={Profile} className={className} alt={name} sizes={[320, 640]} />

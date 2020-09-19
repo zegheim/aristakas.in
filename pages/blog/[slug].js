@@ -1,12 +1,11 @@
-import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
+import Head from "next/head";
 import Date from "../../src/components/date";
 import Layout from "../../src/components/layout";
 import Tag from "../../src/components/tag";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../src/lib/api";
 
-const PostHeader = ({ title, coverImage, date, author, tags }) => (
+const PostHeader = ({ title, coverImage, date, tags }) => (
   <div className="font-mono text-primary mb-4 flex flex-col space-y-1">
     <h1 className="font-black tracking-tighter text-xl leading-tight">
       {title}
@@ -28,7 +27,7 @@ const PostBody = ({ content }) => (
   </div>
 );
 
-const Post = ({ post, morePosts }) => (
+const Post = ({ post }) => (
   <Layout pageName={post.title} blogPost>
     <article className="px-4">
       <Head>
@@ -38,7 +37,6 @@ const Post = ({ post, morePosts }) => (
         title={post.title}
         date={post.created_at}
         coverImage={post.coverImage}
-        author={post.author}
         tags={post.tags}
       />
       <PostBody content={post.content} />

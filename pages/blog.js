@@ -1,8 +1,6 @@
-import Link from "next/link";
-
-import { getAllPostsForHome } from "../src/lib/api";
-import Layout from "../src/components/layout";
 import BlogCard from "../src/components/blog-card";
+import Layout from "../src/components/layout";
+import { getAllPostsForHome } from "../src/lib/api";
 
 const BlogPage = ({ allPosts }) => {
   return (

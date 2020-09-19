@@ -1,4 +1,4 @@
-import { parseISO, format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 const Date = ({ dateString }) => (
   <time dateTime={dateString}>

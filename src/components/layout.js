@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
-
 import BackButton from "./back-button";
 import Header from "./header.js";
 

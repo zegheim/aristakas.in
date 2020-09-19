@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "contentful": "^7.14.6",
     "date-fns": "^2.16.1",
+    "eslint-plugin-react": "^7.20.6",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "next": "latest",
@@ -24,6 +25,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "eslint": "^7.9.0",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
     "stylelint-config-recommended": "^3.0.0",
