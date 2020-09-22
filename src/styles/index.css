@@ -26,7 +26,7 @@
   }
 
   pre {
-    @apply bg-secondary p-4;
+    @apply bg-secondary p-4 whitespace-pre-wrap;
   }
   li {
     @apply mb-2;
