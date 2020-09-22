@@ -12,8 +12,15 @@
   pre,
   ul,
   ol,
-  h2 {
+  h2,
+  h3,
+  figcaption,
+  blockquote {
     @apply mb-4;
+  }
+
+  figcaption {
+    @apply text-xs italic text-center -mt-2;
   }
 
   ul,
@@ -21,6 +28,9 @@
     @apply ml-4;
   }
 
+  blockquote {
+    @apply pl-4 border-l-2 border-secondary;
+  }
   a {
     @apply text-blue-500;
   }
@@ -42,6 +52,10 @@
 
   h2 {
     @apply font-bold text-lg;
+  }
+
+  h3 {
+    @apply font-semibold text-base;
   }
 }
 
