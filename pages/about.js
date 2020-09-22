@@ -10,7 +10,7 @@ const AboutPage = () => (
           Software Engineer Program (SEP)
         </a>
         . Before that, I studied Mathematics and Statistics as an undergraduate
-        at The University of Edinburgh, and graduated on July 2020. As of
+        at The University of Edinburgh, and graduated in July 2020. As of
         September 2020, I have spent 5 years living in the UK!
       </p>
       <p>
