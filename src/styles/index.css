@@ -65,3 +65,8 @@
 /* Stop purging. */
 
 /* Write your own custom utilities here */
+@layer utilities {
+  .center-absolute-x {
+    transform: translate(-50%, 0);
+  }
+}

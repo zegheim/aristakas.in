@@ -25,7 +25,7 @@ const IndexPage = () => {
         <Navbar home />
         <SocialIcons />
       </section>
-      <section className="text-primary absolute bottom-0 left-1/2 -translate-x-1/2">
+      <section className="text-primary absolute bottom-0 left-1/2 center-absolute-x">
         <TechStack />
       </section>
     </Layout>
