@@ -43,7 +43,7 @@ const AboutPage = () => (
       </p>
       <p>
         As part of my commitment towards digital privacy, this website does not
-        employ any tracking measures, nor does it serve any cookies. This will
+        employ any tracking measures, and does not serve any cookies. This will
         be good news to everyone, unless you&#39;re{" "}
         <a href="https://muppet.fandom.com/wiki/Cookie_Monster">this guy</a>.
         The only way for me to find out that you have visited this page is for
@@ -53,8 +53,8 @@ const AboutPage = () => (
         I am always more than happy to talk about digital privacy and practical
         steps you can take to minimise your footprint. Drop me an e-mail over at{" "}
         <a href="mailto:hello@aristakas.in">hello@aristakas.in</a> if you want
-        to do just that! (Or just to say &#34;I visited your page!&#34; -
-        that&#39;s fine and much appreciated too.)
+        to do just that or even to say &#34;I visited your page!&#34; -
+        that&#39;s fine and much appreciated too 😄
       </p>
     </section>
   </Layout>
