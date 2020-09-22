@@ -53,7 +53,7 @@ const AboutPage = () => (
         I am always more than happy to talk about digital privacy and practical
         steps you can take to minimise your footprint. Drop me an e-mail over at{" "}
         <a href="mailto:hello@aristakas.in">hello@aristakas.in</a> if you want
-        to do just that or even to say &#34;I visited your page!&#34; -
+        to do just that, or even to say &#34;I visited your page!&#34; -
         that&#39;s fine and much appreciated too 😄
       </p>
     </section>
