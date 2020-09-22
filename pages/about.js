@@ -21,10 +21,10 @@ const AboutPage = () => (
         enthusiast, and one of my short-term goals is to be a FOSS contributor.
         I use <a href="https://pop.system76.com/">Pop!_OS 20.04 LTS</a> running
         the <a href="https://www.gnome.org/">GNOME desktop environment</a> as my
-        daily driver for personal development work, and my preferred text editor
-        is <a href="https://github.com/VSCodium/vscodium">VSCodium</a>, a
-        modified version of VSCode without the branding, intrusive telemetry,
-        and licensing requirements.
+        daily driver for personal development work. My preferred text editor is{" "}
+        <a href="https://github.com/VSCodium/vscodium">VSCodium</a>, a modified
+        version of VSCode without the branding, intrusive telemetry, and
+        licensing requirements.
       </p>
       <p>
         In the context of our increasingly digitalised world, digital privacy is

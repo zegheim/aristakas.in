@@ -22,7 +22,7 @@ const PostHeader = ({ title, coverImage, date, tags }) => (
     <img
       src={coverImage}
       alt={`Cover image for ${title}`}
-      className="min-h-full min-w-full mb-4"
+      className="shadow min-h-full min-w-full mb-4"
     />
   </>
 );

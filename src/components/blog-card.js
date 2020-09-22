@@ -3,13 +3,13 @@ import Date from "./date";
 import Tag from "./tag";
 
 const BlogImage = ({ coverImage, title, slug }) => (
-  <div className="rounded-t-md bg-secondary h-48 overflow-hidden">
+  <div className="rounded-t-md bg-secondary overflow-hidden">
     <Link as={`/blog/${slug}`} href="/blog/[slug]">
       <a aria-label={title}>
         <img
           src={coverImage}
           alt={`Cover image for ${title}`}
-          className="object-cover min-h-full min-w-full rounded-t-md"
+          className="rounded-t-md mb-0"
         />
       </a>
     </Link>
@@ -37,7 +37,7 @@ const BlogMetadata = ({ title, date, slug, tags }) => (
 );
 
 const BlogCard = ({ title, coverImage, date, slug, tags }) => (
-  <div className="rounded-lg border-2 border-tertiary flex flex-col">
+  <div className="hover:shadow rounded-lg border-2 border-tertiary flex flex-col">
     <BlogImage coverImage={coverImage} title={title} slug={slug} />
     <BlogMetadata title={title} date={date} slug={slug} tags={tags} />
   </div>
