@@ -1,6 +1,7 @@
 import Layout from "../src/components/layout";
 import Navbar from "../src/components/navbar";
 import SocialIcons from "../src/components/social-icons";
+import TechStack from "../src/components/tech-stack";
 
 const IndexPage = () => {
   console.log("I see what you did there 👀");
@@ -23,7 +24,9 @@ const IndexPage = () => {
       <section className="text-primary mt-16 flex flex-col items-center space-y-2">
         <Navbar home />
         <SocialIcons />
-        {/* <TechStack /> */}
+      </section>
+      <section className="text-primary absolute bottom-0 left-1/2 -translate-x-1/2">
+        <TechStack />
       </section>
     </Layout>
   );

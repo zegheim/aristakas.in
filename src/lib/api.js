@@ -1,72 +1,21 @@
-import { createClient } from "contentful";
+import GhostContentAPI from "@tryghost/content-api";
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+const api = new GhostContentAPI({
+  url: process.env.GHOST_API_URL,
+  key: process.env.GHOST_CONTENT_API_KEY,
+  version: "v3",
 });
 
-const parseAuthor = ({ fields }) => ({
-  name: fields.name,
-  picture: fields.picture.fields.file,
-});
+const getSinglePost = async (postSlug) =>
+  await api.posts
+    .read({ slug: postSlug, include: "tags" })
+    .catch((err) => console.error(err));
 
-const parseTag = ({ fields }) => ({
-  name: fields.name,
-  coverImage: fields.coverImage?.fields.file ?? null,
-});
-
-const parseTags = (tags) => tags.map(parseTag);
-
-const parsePost = ({ sys, fields }) => ({
-  title: fields.title,
-  slug: fields.slug,
-  date: fields.date,
-  created_at: sys.createdAt,
-  updated_at: sys.updatedAt,
-  content: fields.content,
-  excerpt: fields.excerpt,
-  coverImage: fields.coverImage.fields.file,
-  author: parseAuthor(fields.author),
-  tags: parseTags(fields.tags),
-});
-
-const parsePostEntries = (entries, cb = parsePost) => entries?.items?.map(cb);
-
-const getAllPostsWithSlug = async () => {
-  const entries = await client.getEntries({
-    content_type: "post",
-    select: "fields.slug",
-  });
-
-  return parsePostEntries(entries, (post) => post.fields);
+const getAllPosts = async (filter) => {
+  const params = !filter
+    ? { limit: "all", include: "tags" }
+    : { limit: "all", fields: filter };
+  return await api.posts.browse(params).catch((err) => console.error(err));
 };
 
-const getAllPostsForHome = async () => {
-  const entries = await client.getEntries({
-    content_type: "post",
-    order: "-sys.createdAt",
-  });
-  return parsePostEntries(entries);
-};
-
-const getPostAndMorePosts = async (slug) => {
-  const entry = await client.getEntries({
-    content_type: "post",
-    limit: 1,
-    "fields.slug[in]": slug,
-  });
-
-  const entries = await client.getEntries({
-    content_type: "post",
-    limit: 2,
-    order: "-sys.createdAt",
-    "fields.slug[nin]": slug,
-  });
-
-  return {
-    post: parsePostEntries(entry)[0],
-    morePosts: parsePostEntries(entries),
-  };
-};
-
-export { getAllPostsWithSlug, getAllPostsForHome, getPostAndMorePosts };
+export { getSinglePost, getAllPosts };

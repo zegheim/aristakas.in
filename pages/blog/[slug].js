@@ -1,9 +1,8 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Head from "next/head";
 import Date from "../../src/components/date";
 import Layout from "../../src/components/layout";
 import Tag from "../../src/components/tag";
-import { getAllPostsWithSlug, getPostAndMorePosts } from "../../src/lib/api";
+import { getAllPosts, getSinglePost } from "../../src/lib/api";
 
 const PostHeader = ({ title, coverImage, date, tags }) => (
   <>
@@ -16,12 +15,12 @@ const PostHeader = ({ title, coverImage, date, tags }) => (
       </div>
       <div className="flex space-x-1 font-sans">
         {tags.map((tag) => (
-          <Tag key={tag.name} name={tag.name} />
+          <Tag key={tag.id} name={tag.name} />
         ))}
       </div>
     </div>
     <img
-      src={coverImage.url}
+      src={coverImage}
       alt={`Cover image for ${title}`}
       className="min-h-full min-w-full mb-4"
     />
@@ -29,30 +28,31 @@ const PostHeader = ({ title, coverImage, date, tags }) => (
 );
 
 const PostBody = ({ content }) => (
-  <div className="text-justify text-primary leading-tight">
-    {documentToReactComponents(content)}
-  </div>
+  <div
+    className="text-justify text-primary leading-tight"
+    dangerouslySetInnerHTML={{ __html: content }}
+  ></div>
 );
 
 const Post = ({ post }) => (
   <Layout pageName={post.title} blogPost>
     <article className="px-4">
       <Head>
-        <meta property="og:image" content={post.coverImage.url} />
+        <meta property="og:image" content={post.feature_image} />
       </Head>
       <PostHeader
         title={post.title}
         date={post.created_at}
-        coverImage={post.coverImage}
+        coverImage={post.feature_image}
         tags={post.tags}
       />
-      <PostBody content={post.content} />
+      <PostBody content={post.html} />
     </article>
   </Layout>
 );
 
 const getStaticPaths = async () => {
-  const allPosts = await getAllPostsWithSlug();
+  const allPosts = await getAllPosts("slug");
   return {
     paths: allPosts?.map(({ slug }) => `/blog/${slug}`) ?? [],
     fallback: false,
@@ -60,11 +60,10 @@ const getStaticPaths = async () => {
 };
 
 const getStaticProps = async ({ params }) => {
-  const data = await getPostAndMorePosts(params.slug);
+  const post = await getSinglePost(params.slug);
   return {
     props: {
-      post: data?.post ?? null,
-      morePosts: data?.morePosts ?? null,
+      post: post,
     },
   };
 };

@@ -7,20 +7,41 @@
     @apply bg-background;
   }
 
-  p {
+  p,
+  img,
+  pre,
+  ul,
+  ol,
+  h2 {
     @apply mb-4;
+  }
+
+  ul,
+  ol {
+    @apply ml-4;
   }
 
   a {
     @apply text-blue-500;
   }
 
-  li p {
-    @apply mb-1;
+  pre {
+    @apply bg-secondary p-4;
+  }
+  li {
+    @apply mb-2;
   }
 
   ul {
-    @apply list-disc mb-4 ml-4;
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  h2 {
+    @apply font-bold text-lg;
   }
 }
 

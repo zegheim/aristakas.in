@@ -7,7 +7,7 @@ const BlogImage = ({ coverImage, title, slug }) => (
     <Link as={`/blog/${slug}`} href="/blog/[slug]">
       <a aria-label={title}>
         <img
-          src={coverImage.url}
+          src={coverImage}
           alt={`Cover image for ${title}`}
           className="object-cover min-h-full min-w-full rounded-t-md"
         />
@@ -29,7 +29,7 @@ const BlogMetadata = ({ title, date, slug, tags }) => (
       </span>
       <div className="flex w-full justify-end space-x-1">
         {tags.map((tag) => (
-          <Tag key={tag.name} name={tag.name} />
+          <Tag key={tag.id} name={tag.name} />
         ))}
       </div>
     </div>
