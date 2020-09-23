@@ -35,7 +35,7 @@ const PostBody = ({ content }) => (
 );
 
 const Post = ({ post }) => (
-  <Layout pageName={post.title} blogPost>
+  <Layout pageName={post.title} pageDescription={post.excerpt} blogPost>
     <article className="px-4">
       <Head>
         <meta property="og:image" content={post.feature_image} />
