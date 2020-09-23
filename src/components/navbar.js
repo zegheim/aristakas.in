@@ -6,7 +6,7 @@ const InternalLink = ({ routeName, currRoute }) => (
   <Link href={routeName}>
     <a
       className={`text-primary ${
-        currRoute === routeName ? "underline font-bold" : ""
+        currRoute === routeName ? "underline font-bold" : "no-underline"
       }`}
     >
       {routeName.slice(1)}

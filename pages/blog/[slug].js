@@ -15,7 +15,7 @@ const PostHeader = ({ title, coverImage, date, tags }) => (
       </div>
       <div className="flex space-x-1 font-sans">
         {tags.map((tag) => (
-          <Tag key={tag.id} name={tag.name} />
+          <Tag key={tag.id} name={tag.name} blogPost />
         ))}
       </div>
     </div>

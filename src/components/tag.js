@@ -1,5 +1,9 @@
-const Tag = ({ name }) => (
-  <div className="rounded-md border-tertiary border bg-secondary text-primary px-1 py-1/2 text-2xs leading-none">
+const Tag = ({ name, blogPost }) => (
+  <div
+    className={`rounded-md border border-tertiary ${
+      blogPost ? "bg-secondary" : "bg-background"
+    } bg-background text-primary px-1 py-1 text-2xs leading-none`}
+  >
     {name}
   </div>
 );

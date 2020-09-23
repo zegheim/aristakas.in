@@ -3,7 +3,7 @@ import Date from "./date";
 import Tag from "./tag";
 
 const BlogImage = ({ coverImage, title, slug }) => (
-  <div className="rounded-t-md bg-secondary overflow-hidden">
+  <div className="rounded-t-md bg-primary overflow-hidden">
     <Link as={`/blog/${slug}`} href="/blog/[slug]">
       <a aria-label={title}>
         <img
@@ -17,10 +17,10 @@ const BlogImage = ({ coverImage, title, slug }) => (
 );
 
 const BlogMetadata = ({ title, date, slug, tags }) => (
-  <div className="flex rounded-b-md bg-primary p-4 flex-1">
-    <div className="text-secondary flex flex-col w-full">
+  <div className="flex rounded-b-md bg-secondary p-4 flex-1">
+    <div className="text-primary flex flex-col w-full">
       <Link as={`/blog/${slug}`} href="/blog/[slug]">
-        <a aria-label={title} className="text-secondary font-semibold">
+        <a aria-label={title} className="text-primary font-semibold">
           {title}
         </a>
       </Link>

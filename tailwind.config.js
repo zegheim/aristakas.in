@@ -22,10 +22,11 @@ module.exports = {
       },
       colors: {
         inherit: "inherit",
-        background: "#c2d9d5",
-        primary: "#f67c99",
-        secondary: "#fbe7d1",
-        tertiary: "#c5c7be",
+        background: "#727e84",
+        accent: "#ebb7e7",
+        primary: "#fcf5c3",
+        secondary: "#729a98",
+        tertiary: "#30404d",
       },
       keyframes: {
         typing: {
@@ -34,7 +35,7 @@ module.exports = {
         },
         "blink-caret": {
           "from, to": { "border-color": "transparent" },
-          "50%": { "border-color": "#f67c99" },
+          "50%": { "border-color": "#ebb7e7" },
         },
       },
       animation: {
