@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Date from "../../src/components/date";
 import Layout from "../../src/components/layout";
 import Tag from "../../src/components/tag";
@@ -34,13 +35,11 @@ const PostBody = ({ content }) => (
 );
 
 const Post = ({ post }) => (
-  <Layout
-    pageName={post.title}
-    pageDescription={post.excerpt}
-    coverImage={post.feature_image}
-    blogPost
-  >
+  <Layout pageName={post.title} blogPost>
     <article className="px-4">
+      <Head>
+        <meta property="og:image" content={post.feature_image} />
+      </Head>
       <PostHeader
         title={post.title}
         date={post.created_at}

@@ -3,25 +3,31 @@ import Img from "react-optimized-image";
 import Profile from "../../public/images/profile.jpg";
 import Navbar from "../components/navbar";
 
-const ProfilePicture = ({ className }) => (
+const ProfilePicture = ({ name, className }) => (
   <Img
     webp
     src={Profile}
     className={className}
-    alt="Justin Arista Kasin"
+    alt={name}
     sizes={[480, 640, 768, 1024, 1280]}
   />
 );
 
-const Header = ({ home, currRoute }) => (
+const Header = ({ home, name, currRoute }) => (
   <header className="flex flex-col items-center">
     {home ? (
-      <ProfilePicture className="w-32 h-32 rounded-full mb-4 border-tertiary border-2" />
+      <ProfilePicture
+        name={name}
+        className="w-32 h-32 rounded-full mb-4 border-tertiary border-2"
+      />
     ) : (
       <>
         <Link href="/">
           <a>
-            <ProfilePicture className="w-24 h-24 rounded-full mb-4 border-tertiary border-2" />
+            <ProfilePicture
+              name={name}
+              className="w-24 h-24 rounded-full mb-4 border-tertiary border-2"
+            />
           </a>
         </Link>
         <Navbar currRoute={currRoute} />
