@@ -5,7 +5,7 @@ const routeNames = ["/about", "/blog"];
 const InternalLink = ({ routeName, currRoute }) => (
   <Link href={routeName}>
     <a
-      className={`text-primary ${
+      className={`text-primary hover:text-accent ${
         currRoute === routeName ? "underline font-bold" : "no-underline"
       }`}
     >
@@ -15,7 +15,7 @@ const InternalLink = ({ routeName, currRoute }) => (
 );
 
 const ExternalLink = ({ href, text }) => (
-  <a className="text-primary" href={href}>
+  <a className="text-primary hover:text-accent" href={href}>
     {text}
   </a>
 );

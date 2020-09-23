@@ -37,7 +37,7 @@ const BlogMetadata = ({ title, date, slug, tags }) => (
 );
 
 const BlogCard = ({ title, coverImage, date, slug, tags }) => (
-  <div className="hover:shadow rounded-lg border-2 border-tertiary flex flex-col">
+  <div className="hover:shadow-lg rounded-lg border-2 border-tertiary flex flex-col">
     <BlogImage coverImage={coverImage} title={title} slug={slug} />
     <BlogMetadata title={title} date={date} slug={slug} tags={tags} />
   </div>
