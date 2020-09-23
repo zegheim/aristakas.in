@@ -16,12 +16,12 @@ const ProfilePicture = ({ className }) => (
 const Header = ({ home, currRoute }) => (
   <header className="flex flex-col items-center">
     {home ? (
-      <ProfilePicture className="w-32 h-32 rounded-full mb-4 border-tertiary border-2" />
+      <ProfilePicture className="w-32 h-32 rounded-full mb-4 border-tertiary border" />
     ) : (
       <>
         <Link href="/">
           <a>
-            <ProfilePicture className="w-24 h-24 rounded-full mb-4 border-tertiary border-2" />
+            <ProfilePicture className="w-24 h-24 rounded-full mb-4 border-tertiary border" />
           </a>
         </Link>
         <Navbar currRoute={currRoute} />

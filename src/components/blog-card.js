@@ -17,7 +17,7 @@ const BlogImage = ({ coverImage, title, slug }) => (
 );
 
 const BlogMetadata = ({ title, date, slug, tags }) => (
-  <div className="flex rounded-b-md bg-secondary p-4 flex-1">
+  <div className="flex rounded-b-md bg-secondary p-4 flex-1 border-t border-tertiary">
     <div className="text-primary flex flex-col w-full">
       <Link as={`/blog/${slug}`} href="/blog/[slug]">
         <a aria-label={title} className="text-primary font-semibold">
@@ -37,7 +37,7 @@ const BlogMetadata = ({ title, date, slug, tags }) => (
 );
 
 const BlogCard = ({ title, coverImage, date, slug, tags }) => (
-  <div className="hover:shadow-lg rounded-lg border-2 border-tertiary flex flex-col">
+  <div className="hover:shadow-lg rounded-lg border border-tertiary flex flex-col">
     <BlogImage coverImage={coverImage} title={title} slug={slug} />
     <BlogMetadata title={title} date={date} slug={slug} tags={tags} />
   </div>
