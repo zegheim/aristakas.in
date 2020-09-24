@@ -21,7 +21,7 @@ const Header = ({ home, currRoute }) => (
       <>
         <Link href="/">
           <a>
-            <ProfilePicture className="w-24 h-24 rounded-full mb-4 border-tertiary border" />
+            <ProfilePicture className="hover:shadow-lg w-24 h-24 rounded-full mb-4 border-tertiary border" />
           </a>
         </Link>
         <Navbar currRoute={currRoute} />
