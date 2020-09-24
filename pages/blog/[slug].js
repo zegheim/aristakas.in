@@ -5,10 +5,8 @@ import { getAllPosts, getSinglePost } from "../../src/lib/api";
 
 const PostHeader = ({ title, coverImage, date, tags }) => (
   <>
-    <div className="font-mono text-primary mb-4 flex flex-col space-y-1">
-      <h1 className="font-black tracking-tighter text-xl leading-tight">
-        {title}
-      </h1>
+    <div className="text-primary mb-4 flex flex-col space-y-2">
+      <h1 className="font-semibold text-4xl leading-none">{title}</h1>
       <div className="font-light">
         <Date dateString={date} />
       </div>
