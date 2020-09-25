@@ -30,6 +30,7 @@ const Meta = ({ blogPost, coverImage, pageName, pageDescription }) => (
     />
     <meta name="og:title" content={`${pageName} | ${siteTitle}`} />
     <meta property="og:image" content={coverImage} />
+    <meta property="og:image:alt" content={`Cover image for ${pageName}`} />
     <title>{`${pageName} | ${siteTitle}`}</title>
   </Head>
 );
