@@ -9,7 +9,7 @@ const Layout = ({
   blogPost,
   pageName,
   pageDescription,
-  coverImage,
+  coverImage = "/images/profile.jpg",
 }) => {
   const router = useRouter();
 
