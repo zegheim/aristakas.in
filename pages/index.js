@@ -17,7 +17,7 @@ const IndexPage = () => {
           </h1>
         </div>
         <p>
-          I am currently a Software Engineer at J.P. Morgan, based in London.
+          I am currently a Software Engineer at J.P. Morgan, based in the UK.
         </p>
         <p>Views expressed are my own.</p>
       </section>
