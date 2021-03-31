@@ -1,17 +1,25 @@
+import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
 import Layout from "../src/components/layout";
+import { START_DATE } from "../src/lib/constant";
 
-const AboutPage = () => (
+dayjs.extend(duration)
+
+const AboutPage = () => {
+const today = dayjs()
+const numYears = dayjs.duration(today.diff(START_DATE)).asYears()
+return (  
   <Layout pageName="About Me">
     <section className="text-primary text-justify leading-snug px-4">
       <p>Hey there! 👋</p>
       <p>
-        I am a Graduate Software Engineer at JP Morgan, as part of their{" "}
+        I am a Graduate Software Engineer at JP Morgan, as part of their 
         <a href="https://careers.jpmorgan.com/global/en/students/programs/software-engineer-fulltime">
           Software Engineer Program (SEP)
         </a>
         . Before that, I studied Mathematics and Statistics as an undergraduate
-        at The University of Edinburgh, and graduated in July 2020. As of
-        September 2020, I have spent 5 years living in the UK!
+        at The University of Edinburgh, and graduated in July 2020. {`As of ${today.format("MMMM YYYY")}, 
+        I have spent ${numYears.toFixed(2)} years living in the UK!`}
       </p>
       <p>
         I am a{" "}
@@ -59,5 +67,7 @@ const AboutPage = () => (
     </section>
   </Layout>
 );
+}
+
 
 export default AboutPage;
