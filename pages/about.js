@@ -13,7 +13,7 @@ return (
     <section className="text-primary text-justify leading-snug px-4">
       <p>Hey there! 👋</p>
       <p>
-        I am a Graduate Software Engineer at JP Morgan, as part of their 
+        I am a Graduate Software Engineer at JP Morgan, as part of their{" "}
         <a href="https://careers.jpmorgan.com/global/en/students/programs/software-engineer-fulltime">
           Software Engineer Program (SEP)
         </a>
