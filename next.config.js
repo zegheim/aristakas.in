@@ -1,12 +1,8 @@
-const withPlugins = require("next-compose-plugins");
-const optimizedImages = require("next-optimized-images");
-
-module.exports = withPlugins([
-  [
-    optimizedImages,
-    {
-      removeOriginalExtension: true,
-      optimizeImagesInDev: true,
-    },
-  ],
-]);
+module.exports = {
+  future: {
+    webpack5: true,
+  },
+  images: {
+    loader: "cloudinary",
+  },
+};

@@ -1,27 +1,42 @@
+import Image from "next/image";
 import Link from "next/link";
-import Img from "react-optimized-image";
-import Profile from "../../public/images/profile.jpg";
 import Navbar from "../components/navbar";
+import buildCloudinaryUrl from "../lib/url";
 
-const ProfilePicture = ({ className }) => (
-  <Img
-    webp
-    src={Profile}
-    className={className}
-    alt="Justin Arista Kasin"
-    sizes={[480, 640, 768, 1024, 1280]}
-  />
+const ProfilePicture = ({ className, width, height, imageName }) => (
+  <div className={className}>
+    <Image
+      src={buildCloudinaryUrl(imageName)}
+      alt="Justin Arista Kasin"
+      className={className}
+      width={width}
+      height={height}
+      unoptimized={true}
+    />
+  </div>
 );
 
 const Header = ({ home, currRoute }) => (
   <header className="flex flex-col items-center">
     {home ? (
-      <ProfilePicture className="w-32 h-32 rounded-full mb-4 border-tertiary border" />
+      <>
+        <ProfilePicture
+          imageName="profile"
+          className="rounded-full w-32 h-32 mb-4 border-tertiary border"
+          width={128}
+          height={128}
+        />
+      </>
     ) : (
       <>
         <Link href="/">
           <a>
-            <ProfilePicture className="hover:shadow-lg w-24 h-24 rounded-full mb-4 border-tertiary border" />
+            <ProfilePicture
+              imageName="profile"
+              className="hover:shadow-lg w-24 h-24 rounded-full mb-4 border-tertiary border"
+              width={96}
+              height={96}
+            />
           </a>
         </Link>
         <Navbar currRoute={currRoute} />
