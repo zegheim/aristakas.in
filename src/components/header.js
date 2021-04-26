@@ -21,7 +21,7 @@ const Header = ({ home, currRoute }) => (
     {home ? (
       <>
         <ProfilePicture
-          imageName="profile.jpg"
+          imageName="profile"
           className="rounded-full w-32 h-32 mb-4 border-tertiary border"
           width={128}
           height={128}
