@@ -6,7 +6,7 @@ import buildCloudinaryUrl from "../lib/url";
 const ProfilePicture = ({ className, width, height, imageName }) => (
   <div className={className}>
     <Image
-      src={buildCloudinaryUrl(imageName)}
+      src={`${buildCloudinaryUrl(imageName)}.jpg`}
       alt="Justin Arista Kasin"
       className={className}
       width={width}
@@ -21,7 +21,7 @@ const Header = ({ home, currRoute }) => (
     {home ? (
       <>
         <ProfilePicture
-          imageName="profile.jpg"
+          imageName="profile"
           className="rounded-full w-32 h-32 mb-4 border-tertiary border"
           width={128}
           height={128}
@@ -32,7 +32,7 @@ const Header = ({ home, currRoute }) => (
         <Link href="/">
           <a>
             <ProfilePicture
-              imageName="profile.jpg"
+              imageName="profile"
               className="hover:shadow-lg w-24 h-24 rounded-full mb-4 border-tertiary border"
               width={96}
               height={96}
