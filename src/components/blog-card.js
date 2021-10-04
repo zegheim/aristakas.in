@@ -3,13 +3,13 @@ import Date from "./date";
 import Tag from "./tag";
 
 const BlogImage = ({ coverImage, title }) => (
-  <div className="rounded-t-xl border-t border-l border-r border-tertiary bg-primary overflow-hidden">
+  <div className="rounded-t-lg border-t border-l border-r border-tertiary bg-primary overflow-hidden">
     <img src={coverImage} alt={`Cover image for ${title}`} className="mb-0" />
   </div>
 );
 
 const BlogMetadata = ({ title, date, tags }) => (
-  <div className="flex rounded-b-xl bg-secondary p-4 flex-1 border border-tertiary">
+  <div className="flex rounded-b-lg bg-secondary p-4 flex-1 border border-tertiary">
     <div className="text-primary flex flex-col w-full">
       <span className="text-primary font-semibold">{title}</span>
       <span className="text-sm font-light">
